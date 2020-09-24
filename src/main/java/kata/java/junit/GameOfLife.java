@@ -5,10 +5,6 @@ public class GameOfLife {
 
     }
 
-    public static int answer() {
-        return 6 * 7;
-    }
-
     public int countLivingNeighbors(int row, int col) {
         return 0;
     }
