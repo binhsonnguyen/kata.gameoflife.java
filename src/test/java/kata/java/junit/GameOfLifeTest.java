@@ -33,4 +33,12 @@ public class GameOfLifeTest {
         game.setLiving(1, 3);
         assertEquals(2, game.countLivingNeighbors(1, 2));
     }
+
+    @Test
+    void foundsThreeLivingNeighbours() {
+        game.setLiving(1, 1);
+        game.setLiving(1, 2);
+        game.setLiving(1, 3);
+        assertEquals(3, game.countLivingNeighbors(2, 2));
+    }
 }
