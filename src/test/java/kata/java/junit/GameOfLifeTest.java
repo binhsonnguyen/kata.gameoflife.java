@@ -7,11 +7,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class HikerTest {
+public class GameOfLifeTest {
     @Test
-    public void life_the_universe_and_everything() {
-        int expected = 42;
-        int actual = Hiker.answer();
-        assertEquals(expected, actual);
+    void foundsNoLivingNeighborsInAnEmptyUniverse() {
+        GameOfLife game = new GameOfLife(4, 8);
+        assertEquals(0, game.countLivingNeighbors(1, 3));
     }
 }
