@@ -1,17 +1,23 @@
 package kata.java.junit;
 
 public class GameOfLife {
-    private int hasLivingCell = 0;
+    private int countLivingCells = 0;
+    private int[][] cells;
 
     public GameOfLife(int rows, int cols) {
-
+        cells = new int[rows][cols];
     }
 
     public int countLivingNeighbors(int row, int col) {
-        return hasLivingCell;
+        int countLivingCells = 0;
+        if (cells[row][col - 1] == 1) {
+            countLivingCells++;
+        }
+        return countLivingCells;
     }
 
     public void setLiving(int row, int col) {
-        hasLivingCell++;
+        countLivingCells++;
+        cells[row][col] = 1;
     }
 }
