@@ -9,7 +9,7 @@ public class GameOfLife {
 
     public int countLivingNeighbors(int row, int col) {
         int countLivingCells = 0;
-        if (cells[row][col - 1] == 1) {
+        if (isLivingCell(row, col - 1)) {
             countLivingCells++;
         }
         return countLivingCells;
@@ -17,5 +17,9 @@ public class GameOfLife {
 
     public void setLiving(int row, int col) {
         cells[row][col] = 1;
+    }
+
+    private boolean isLivingCell(int row, int col) {
+        return cells[row][col] == 1;
     }
 }
