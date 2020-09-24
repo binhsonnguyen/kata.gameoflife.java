@@ -1,6 +1,8 @@
 package kata.java.junit;
 
 public class GameOfLife {
+    private static final int ALIVE = 1;
+
     private int[][] cells;
 
     public GameOfLife(int rows, int cols) {
@@ -16,10 +18,10 @@ public class GameOfLife {
     }
 
     public void setLiving(int row, int col) {
-        cells[row][col] = 1;
+        cells[row][col] = ALIVE;
     }
 
     private boolean isLivingCell(int row, int col) {
-        return cells[row][col] == 1;
+        return cells[row][col] == ALIVE;
     }
 }
