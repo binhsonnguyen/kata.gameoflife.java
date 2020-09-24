@@ -8,4 +8,8 @@ public class GameOfLife {
     public int countLivingNeighbors(int row, int col) {
         return 0;
     }
+
+    public void setLiving(int row, int col) {
+
+    }
 }
