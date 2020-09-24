@@ -1,7 +1,6 @@
 package kata.java.junit;
 
 public class GameOfLife {
-    private int countLivingCells = 0;
     private int[][] cells;
 
     public GameOfLife(int rows, int cols) {
@@ -17,7 +16,6 @@ public class GameOfLife {
     }
 
     public void setLiving(int row, int col) {
-        countLivingCells++;
         cells[row][col] = 1;
     }
 }
