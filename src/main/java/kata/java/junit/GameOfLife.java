@@ -42,6 +42,7 @@ public class GameOfLife {
     private boolean isOuterCell(int row, int col) {
         return row < 0
                 || row >= cells.length
-                || col < 0;
+                || col < 0
+                || col >= cells[0].length;
     }
 }
