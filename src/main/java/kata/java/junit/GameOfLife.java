@@ -9,9 +9,8 @@ public class GameOfLife {
         cells = new int[rows][cols];
     }
 
-    public int countLivingNeighbors(int row, int col) {
-        int countLivingCells = 0;
-        int[][] neighborsPositions = {
+    private static int[][] neighborsPositions(int row, int col) {
+        return new int[][]{
                 {row - 1, col}, // top
                 {row, col - 1}, // left
                 {row, col + 1}, // right
@@ -21,7 +20,11 @@ public class GameOfLife {
                 {row + 1, col - 1}, // bottom left
                 {row + 1, col + 1}, // bottom left
         };
-        for (int[] pos : neighborsPositions) {
+    }
+
+    public int countLivingNeighbors(int row, int col) {
+        int countLivingCells = 0;
+        for (int[] pos : neighborsPositions(row, col)) {
             if (isLiving(pos[0], pos[1])) countLivingCells++;
         }
         return countLivingCells;
