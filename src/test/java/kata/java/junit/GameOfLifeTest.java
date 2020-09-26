@@ -5,8 +5,7 @@ import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class GameOfLifeTest {
@@ -134,5 +133,14 @@ public class GameOfLifeTest {
         game.setLiving(1, 3);
         game.evolve();
         assertFalse(game.isLiving(1, 3));
+    }
+
+    @Test
+    void aLivingCellWithTwoNeighborsLive() {
+        game.setLiving(1, 3);
+        game.setLiving(1, 2);
+        game.setLiving(1, 4);
+        game.evolve();
+        assertTrue(game.isLiving(1, 3));
     }
 }
