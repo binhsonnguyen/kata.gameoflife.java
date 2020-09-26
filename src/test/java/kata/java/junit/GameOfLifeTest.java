@@ -143,4 +143,14 @@ public class GameOfLifeTest {
         game.evolve();
         assertTrue(game.isLiving(1, 3));
     }
+
+    @Test
+    void aLivingCellWithThreeNeighborsLive() {
+        game.setLiving(1, 3);
+        game.setLiving(1, 2);
+        game.setLiving(1, 4);
+        game.setLiving(2, 3);
+        game.evolve();
+        assertTrue(game.isLiving(1, 3));
+    }
 }
