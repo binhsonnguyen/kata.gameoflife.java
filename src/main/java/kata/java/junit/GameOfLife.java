@@ -15,6 +15,7 @@ public class GameOfLife {
                 cells[row - 1][col],
                 cells[row][col - 1],
                 cells[row][col + 1],
+                cells[row + 1][col],
         };
         for (int cell : neighbors) {
             if (isLiving(cell)) countLivingCells++;
