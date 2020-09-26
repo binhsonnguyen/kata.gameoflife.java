@@ -35,6 +35,10 @@ public class GameOfLife {
         cells[row][col] = ALIVE;
     }
 
+    private void setDies(int row, int col) {
+        cells[row][col] = DEAD;
+    }
+
     public boolean isLiving(int row, int col) {
         if (isOuterCell(row, col)) return false;
         return cells[row][col] == ALIVE;
@@ -51,7 +55,7 @@ public class GameOfLife {
         int[][] neighborsAnalysis = neighborsAnalysis(cells);
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
-                if (neighborsAnalysis[i][j] != 2) cells[i][j] = DEAD;
+                if (neighborsAnalysis[i][j] != 2) setDies(i, j);
             }
         }
     }
