@@ -32,11 +32,15 @@ public class GameOfLife {
     }
 
     public void setLiving(int row, int col) {
-        cells[row][col] = ALIVE;
+        setLiving(row, col, true);
     }
 
     private void setDies(int row, int col) {
-        cells[row][col] = DEAD;
+        setLiving(row, col, false);
+    }
+
+    private void setLiving(int row, int col, boolean toAlive) {
+        cells[row][col] = toAlive ? ALIVE : DEAD;
     }
 
     public boolean isLiving(int row, int col) {
