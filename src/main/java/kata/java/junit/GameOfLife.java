@@ -63,6 +63,9 @@ public class GameOfLife {
                         || neighborsAnalysis[i][j] > 3) {
                     setDies(i, j);
                 }
+                if (neighborsAnalysis[i][j] == 3) {
+                    setLiving(i, j);
+                }
             }
         }
     }
