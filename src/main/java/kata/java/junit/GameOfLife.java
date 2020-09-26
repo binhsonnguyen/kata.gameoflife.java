@@ -3,7 +3,7 @@ package kata.java.junit;
 public class GameOfLife {
     private static final int ALIVE = 1;
 
-    private int[][] cells;
+    private final int[][] cells;
 
     public GameOfLife(int rows, int cols) {
         cells = new int[rows][cols];
