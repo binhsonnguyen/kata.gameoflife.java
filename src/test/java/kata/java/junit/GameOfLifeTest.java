@@ -121,4 +121,10 @@ public class GameOfLifeTest {
         game.setLiving(1, 1);
         assertEquals(1, game.countLivingNeighbors(1, 0));
     }
+
+    @Test
+    void foundLivingNeighborsOfRightCell() {
+        game.setLiving(1, 6);
+        assertEquals(1, game.countLivingNeighbors(1, 7));
+    }
 }
