@@ -35,11 +35,13 @@ public class GameOfLife {
     }
 
     private boolean isLiving(int row, int col) {
-        if (row < 0
-                || row >= cells.length
-                || col < 0) {
-            return false;
-        }
+        if (isOuterCell(row, col)) return false;
         return cells[row][col] == ALIVE;
+    }
+
+    private boolean isOuterCell(int row, int col) {
+        return row < 0
+                || row >= cells.length
+                || col < 0;
     }
 }
