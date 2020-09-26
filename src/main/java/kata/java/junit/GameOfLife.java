@@ -11,14 +11,15 @@ public class GameOfLife {
 
     public int countLivingNeighbors(int row, int col) {
         int countLivingCells = 0;
-        if (isLivingCell(row, col - 1)) {
-            countLivingCells++;
-        }
-        if (isLivingCell(row, col + 1)) {
-            countLivingCells++;
-        }
-        if (isLivingCell(row - 1, col)) {
-            countLivingCells++;
+        int[][] neighbors = {
+                {row - 1, col},
+                {row, col - 1},
+                {row, col + 1}
+        };
+        for (int[] pos : neighbors) {
+            if (isLivingCell(pos[0], pos[1])) {
+                countLivingCells++;
+            }
         }
         return countLivingCells;
     }
