@@ -11,7 +11,7 @@ public class GameOfLife {
 
     public int countLivingNeighbors(int row, int col) {
         int countLivingCells = 0;
-        int[][] neighbors = {
+        int[][] neighborsPossitions = {
                 {row - 1, col}, // top
                 {row, col - 1}, // left
                 {row, col + 1}, // right
@@ -21,9 +21,9 @@ public class GameOfLife {
                 {row + 1, col - 1}, // bottom left
                 {row + 1, col + 1}, // bottom left
         };
-        for (int[] i : neighbors) {
-            if (i[0] < 0) continue;
-            if (isLiving(cells[i[0]][i[1]])) countLivingCells++;
+        for (int[] pos : neighborsPossitions) {
+            if (pos[0] < 0) continue;
+            if (isLiving(cells[pos[0]][pos[1]])) countLivingCells++;
         }
         return countLivingCells;
     }
