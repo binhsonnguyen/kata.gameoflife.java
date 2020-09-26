@@ -14,6 +14,9 @@ public class GameOfLife {
         if (isLivingCell(row, col - 1)) {
             countLivingCells++;
         }
+        if (isLivingCell(row, col + 1)) {
+            countLivingCells++;
+        }
         return countLivingCells;
     }
 
