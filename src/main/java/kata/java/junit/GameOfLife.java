@@ -59,7 +59,7 @@ public class GameOfLife {
         int[][] neighborsAnalysis = neighborsAnalysis(cells);
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
-                if (neighborsAnalysis[i][j] != 2) setDies(i, j);
+                if (neighborsAnalysis[i][j] < 2) setDies(i, j);
             }
         }
     }
