@@ -11,18 +11,19 @@ public class GameOfLife {
 
     public int countLivingNeighbors(int row, int col) {
         int countLivingCells = 0;
-        int[] neighbors = {
-                cells[row - 1][col], // top
-                cells[row][col - 1], // left
-                cells[row][col + 1], // right
-                cells[row + 1][col], // bottom
-                cells[row - 1][col - 1], // top left
-                cells[row - 1][col + 1], // top right
-                cells[row + 1][col - 1], // bottom left
-                cells[row + 1][col + 1], // bottom left
+        int[][] neighbors = {
+                {row - 1, col}, // top
+                {row, col - 1}, // left
+                {row, col + 1}, // right
+                {row + 1, col}, // bottom
+                {row - 1, col - 1}, // top left
+                {row - 1, col + 1}, // top right
+                {row + 1, col - 1}, // bottom left
+                {row + 1, col + 1}, // bottom left
         };
-        for (int cell : neighbors) {
-            if (isLiving(cell)) countLivingCells++;
+        for (int[] i : neighbors) {
+            if (i[0] < 0) continue;
+            if (isLiving(cells[i[0]][i[1]])) countLivingCells++;
         }
         return countLivingCells;
     }
