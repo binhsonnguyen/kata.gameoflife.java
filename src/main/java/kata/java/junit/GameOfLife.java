@@ -34,7 +34,7 @@ public class GameOfLife {
         cells[row][col] = ALIVE;
     }
 
-    private boolean isLiving(int row, int col) {
+    public boolean isLiving(int row, int col) {
         if (isOuterCell(row, col)) return false;
         return cells[row][col] == ALIVE;
     }
@@ -44,5 +44,13 @@ public class GameOfLife {
                 || row >= cells.length
                 || col < 0
                 || col >= cells[0].length;
+    }
+
+    public void evolve() {
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                cells[i][j] = 0;
+            }
+        }
     }
 }
