@@ -48,10 +48,21 @@ public class GameOfLife {
     }
 
     public void evolve() {
+        int[][] neighborsAnalysis = neighborsAnalysis(cells);
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
-                cells[i][j] = DEAD;
+                if (neighborsAnalysis[i][j] != 2) cells[i][j] = DEAD;
             }
         }
+    }
+
+    private int[][] neighborsAnalysis(int[][] cells) {
+        int[][] neighborsAnalysis = new int[cells.length][cells[0].length];
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                neighborsAnalysis[i][j] = countLivingNeighbors(i, j);
+            }
+        }
+        return neighborsAnalysis;
     }
 }
