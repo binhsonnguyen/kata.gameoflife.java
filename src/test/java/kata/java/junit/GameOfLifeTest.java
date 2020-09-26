@@ -57,4 +57,14 @@ public class GameOfLifeTest {
         game.setLiving(2, 2);
         assertEquals(4, game.countLivingNeighbors(1, 2));
     }
+
+    @Test
+    void foundsOneLivingNeighboursAtTopLeft() {
+        game.setLiving(0, 2);
+        game.setLiving(1, 1);
+        game.setLiving(1, 3);
+        game.setLiving(2, 2);
+        game.setLiving(0, 1);
+        assertEquals(5, game.countLivingNeighbors(1, 2));
+    }
 }
