@@ -17,6 +17,9 @@ public class GameOfLife {
                 cells[row][col + 1], // right
                 cells[row + 1][col], // bottom
                 cells[row - 1][col - 1], // top left
+                cells[row - 1][col + 1], // top right
+                cells[row + 1][col - 1], // bottom left
+                cells[row + 1][col + 1], // bottom left
         };
         for (int cell : neighbors) {
             if (isLiving(cell)) countLivingCells++;
