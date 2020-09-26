@@ -153,4 +153,15 @@ public class GameOfLifeTest {
         game.evolve();
         assertTrue(game.isLiving(1, 3));
     }
+
+    @Test
+    public void aCellWithMoreThanThreeNeighboursDies() {
+        game.setLiving(1, 3);
+        game.setLiving(0, 2);
+        game.setLiving(0, 3);
+        game.setLiving(0, 4);
+        game.setLiving(1, 4);
+        game.evolve();
+        assertFalse(game.isLiving(1, 3));
+    }
 }
