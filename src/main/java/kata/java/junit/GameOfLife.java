@@ -2,6 +2,7 @@ package kata.java.junit;
 
 public class GameOfLife {
     private static final int ALIVE = 1;
+    private static final int DEAD = 0;
 
     private final int[][] cells;
 
@@ -49,7 +50,7 @@ public class GameOfLife {
     public void evolve() {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
-                cells[i][j] = 0;
+                cells[i][j] = DEAD;
             }
         }
     }
